@@ -68,12 +68,22 @@ app.delete("/thread/:id", async (req, res) => {
 
 app.delete("/threads", async (req, res) => {
     try {
-     
-        const  deletedThreads=await Thread.deleteMany({});
-        res.status(200).json({message:"all threads deleted successfully",deletedThreads});
+
+        const deletedThreads = await Thread.deleteMany({});
+        res.status(200).json({ message: "all threads deleted successfully", deletedThreads });
     } catch (err) {
         console.log(err);
         res.status(500).json({ error: "failed to delete threads" });
+    }
+})
+
+app.get("/test", async (req, res) => {
+
+    try {
+        res.status(200).json({ message: "test route is working fine" });
+
+    } catch (err) {
+        res.status(500).json({ error: "something went wrong", err })
     }
 })
 
