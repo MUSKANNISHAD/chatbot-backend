@@ -77,7 +77,7 @@ app.delete("/threads", async (req, res) => {
     }
 })
 
-app.get("/test", async (req, res) => {
+app.get("/tests", async (req, res) => {
 
     try {
         res.status(200).json({ message: "final updated route is working fine" });
