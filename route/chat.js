@@ -86,6 +86,13 @@ app.get("/test", async (req, res) => {
         res.status(500).json({ error: "something went wrong", err })
     }
 })
+app.get("/test2", async (req, res) => {
+    try {
+        res.status(200).json({ message: "how are you?" });
+    } catch (err) {
+        res.status(500).json({ error: "something went wrong", err })
+    }
+})
 
 
 //Post Route
