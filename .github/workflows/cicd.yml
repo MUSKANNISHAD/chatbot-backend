@@ -9,8 +9,16 @@ jobs:
     runs-on: self-hosted
 
     steps:
+      - name : Backup .env
+        run: 
+          if [ -f .env ]: then mv .env /tmp/env_backup: fi
+      
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name : Restore .env 
+        run :
+          if [ -f /tmp/env_backup ]: then mv /tmp/env_backup .env :fi
 
       - name: Setup Node
         uses: actions/setup-node@v4
