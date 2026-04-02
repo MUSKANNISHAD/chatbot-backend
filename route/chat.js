@@ -80,7 +80,7 @@ app.delete("/threads", async (req, res) => {
 app.get("/test", async (req, res) => {
 
     try {
-        res.status(200).json({ message: "new  test route is working fine" });
+        res.status(200).json({ message: "final updated route is working fine" });
 
     } catch (err) {
         res.status(500).json({ error: "something went wrong", err })
