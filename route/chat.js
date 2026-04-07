@@ -77,7 +77,7 @@ app.delete("/threads", async (req, res) => {
     }
 })
 
-app.get("/tests", async (req, res) => {
+app.get("/test1", async (req, res) => {
 
     try {
         res.status(200).json({ message: "final updated route is working fine" });
@@ -88,46 +88,11 @@ app.get("/tests", async (req, res) => {
 })
 app.get("/test2", async (req, res) => {
     try {
-        res.status(200).json({ message: "how are you?" });
+        res.status(200).json({ message: "get it" });
     } catch (err) {
         res.status(500).json({ error: "something went wrong", err })
     }
 })
-
-
-//Post Route
-
-// app.post("/chat", async (req, res) => {
-//     const { threadId, message } = req.body;
-
-//     if (!threadId || !message) {
-//         return res.status(400).json({ error: " all fields are required" });
-//     }
-//     try {
-//         let thread = await Thread.findOne({ threadId });
-//         if (!thread) {
-//             thread = new Thread({
-//                 threadId,
-//                 title: "New Chat"
-//             });
-//         } else {
-//             thread.messages.push({ role: "user", content: message });
-//         }
-
-//         const assitantResponse = await getOpenAiApiResponce(message);
-//         thread.messages.push({ "role": "assistant", "content": assitantResponse });
-//         thread.updatedAt = Date.now();
-
-//         await thread.save();
-//         res.json({ reply: assitantResponse });
-
-//     } catch (err) {
-//         console.log(err);
-//         res.status(500).json({ error: " something went wrong" ,err});
-//     }
-// })
-
-
 
 
 app.post("/chat", async (req, res) => {
