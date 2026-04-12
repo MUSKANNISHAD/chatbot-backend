@@ -11,13 +11,23 @@ import router from "./route/user.js";
 const server = express();
 const PORT = process.env.PORT || 5000;
 
-server.use(cors());
+server.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://stayhub-chat.duckdns.org"
+    ],
+    credentials: true
+  })
+);
+
 server.use(express.json());
+
 server.use(app);
 server.use(router);
 
 server.get("/", (req, res) => {
-  res.send("helloo world");
+  res.send("hello world");
 })
 
 const Mongodb = async () => {
