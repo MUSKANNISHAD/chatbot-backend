@@ -53,7 +53,7 @@ router.post("/thread/login", async (req, res) => {
         }
         let token = crypto.randomBytes(32).toString("hex");
         user.token = token;
-
+        console.log("user token is :", user.token);
 
         await user.save();
 
