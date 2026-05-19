@@ -14,8 +14,7 @@ const PORT = process.env.PORT || 5000;
 server.use(
   cors({
     origin: [
-      "http://localhost:5173",
-      "https://stayhub-chat.duckdns.org"
+      "*"
     ],
     credentials: true
   })
