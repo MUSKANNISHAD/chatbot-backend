@@ -11,14 +11,8 @@ import router from "./route/user.js";
 const server = express();
 const PORT = process.env.PORT || 5000;
 
-server.use(
-  cors({
-    origin: [
-      "*"
-    ],
-    credentials: true
-  })
-);
+
+server.use(cors());
 
 server.use(express.json());
 
