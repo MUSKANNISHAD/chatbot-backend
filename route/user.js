@@ -8,7 +8,11 @@ import app from "./chat.js";
 
 router.post("/thread/signUp", async (req, res) => {
     try {
+        console.log("BODY RECEIVED:", req.body);
         const { username, password, email } = req.body;
+        console.log("username:", username);
+        console.log("email:", email);
+        console.log("password:", password);
 
         if (!username || !password || !email) {
             return res.status(400).json({ message: "All fields are required" });
