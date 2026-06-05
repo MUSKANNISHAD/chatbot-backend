@@ -37,7 +37,12 @@ router.post("/thread/signUp", async (req, res) => {
         res.status(201).json({ message: "user registrede successfully" });
 
     } catch (err) {
-        res.status(500).json({ message: `something went wrong ${err}` });
+        console.error(err);
+
+        res.status(500).json({
+            error: err.message,
+            name: err.name
+        });
     }
 })
 
