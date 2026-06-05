@@ -20,7 +20,7 @@ server.use(app);
 server.use(router);
 
 server.get("/", (req, res) => {
-  res.send("hello world");
+  res.send("This is Ai assistant backend Server");
 })
 
 const Mongodb = async () => {
